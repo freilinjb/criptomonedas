@@ -2,12 +2,13 @@ import React from 'react';
 import styled from '@emotion/styled';
 
 import useMoneda from '../hooks/useMoneda';
+import useCriptomoneda from '../hooks/useCriptomoneda';
 
 const Boton = styled.input`
     margin-top:20px;
     font-weight: bold;
     font-size:20px;
-    padding:10px;
+    padding:1rem;
     background-color: #66a2fe;
     border: none;
     width: 100%;
@@ -35,9 +36,14 @@ const Formulario = () => {
 
     //utilizar useMoneda
     const [state, SelectMonedas] = useMoneda("Elige tu Moneda",'', MONEDAS);
+   
+   //utilizar useCriptomoneda
+
+   const [criptomoneda, SelectCripto] = useCriptomoneda("Elige tu Criptomoneda",'');
     return ( 
         <form>
             <SelectMonedas/>
+            <SelectCripto/>
             <Boton typed="submit" value="Calcular"/>
         </form>
      );
