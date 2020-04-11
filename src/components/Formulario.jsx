@@ -43,15 +43,15 @@ const Formulario = () => {
    
    //utilizar useCriptomoneda
 
-   const [criptomoneda, SelectCripto] = useCriptomoneda("Elige tu Criptomoneda",'');
+   const [criptomoneda, SelectCripto] = useCriptomoneda("Elige tu Criptomoneda",'',listaCripto);
    
    useEffect(() => {
     const consultarAPI = async () => {
         const url = "https://min-api.cryptocompare.com/data/top/mktcapfull?limit=10&tsym=USD";
-
+ 
         const resultado = await Axios.get(url);
 
-        console.log(resultado);
+        setListaCripto(resultado.data.Data);
     } 
     consultarAPI();
    },[]);
