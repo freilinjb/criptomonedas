@@ -38,7 +38,7 @@ const useMoneda = (label,stateInicial,opciones) => {
                         console.log(`prueba de cambio ${state}`);
                         
                     }}
-                    value={state}>
+                     value={state}>
                     <option value="">--Seleccione --</option>
                     {opciones.map(opcion => (
                         <option key={opcion.codigo} value={opcion.codigo}>{opcion.nombre}</option>
