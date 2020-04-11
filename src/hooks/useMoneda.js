@@ -10,9 +10,15 @@ const useMoneda = (label,stateInicial,opciones) => {
     //lo que este aqui es lo que se va a mostrar en pantalla
         <Fragment>
             <div className="form-group">
-                <label htmlFor="">{label}</label>
-                <select className="form-control" name="moneda">
-                    <option value="" disabled selected>--Seleccione --</option>
+                <label htmlFor="moneda">{label}</label>
+                <select className="form-control" name="moneda"
+                    onChange={ e => {
+                        setState(e.target.value);
+                        console.log(`prueba de cambio ${state}`);
+                        
+                    }}
+                    value={state}>
+                    <option value="">--Seleccione --</option>
                     {opciones.map(opcion => (
                         <option key={opcion.codigo} value={opcion.codigo}>{opcion.nombre}</option>
                     ))}
