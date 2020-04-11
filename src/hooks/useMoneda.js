@@ -1,4 +1,25 @@
 import React,{Fragment, useState} from 'react';
+import styled from '@emotion/styled';
+
+const Label = styled.label`
+    font-family:'Bebas Neue', cursive;
+    color: #FFF;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 2.4rem;
+    margin-top: 2rem;
+    display: block;
+`;
+
+const Select = styled.select`
+    width:100%;
+    display:block;
+    padding:1rem;
+    -webkit-appearance: none;
+    border-radius:10px;
+    border: none;
+    font-size: 1.2rem;
+`;
 
 const useMoneda = (label,stateInicial,opciones) => {
 
@@ -10,8 +31,8 @@ const useMoneda = (label,stateInicial,opciones) => {
     //lo que este aqui es lo que se va a mostrar en pantalla
         <Fragment>
             <div className="form-group">
-                <label htmlFor="moneda">{label}</label>
-                <select className="form-control" name="moneda"
+                <Label htmlFor="moneda">{label}</Label>
+                <Select className="form-control" name="moneda"
                     onChange={ e => {
                         setState(e.target.value);
                         console.log(`prueba de cambio ${state}`);
@@ -22,7 +43,7 @@ const useMoneda = (label,stateInicial,opciones) => {
                     {opciones.map(opcion => (
                         <option key={opcion.codigo} value={opcion.codigo}>{opcion.nombre}</option>
                     ))}
-                </select>
+                </Select>
             </div>
         </Fragment>
     );
