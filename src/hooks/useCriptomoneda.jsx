@@ -35,11 +35,10 @@ const useCriptomoneda = (label,stateInicial,opciones) => {
                 <Label htmlFor="moneda">{label}</Label>
                 <Select className="form-control" name="moneda"
                     onChange={ e => setState(e.target.value)}
-                    value={state}>
-
+                    value={state} >
                     <option value="">--Seleccione --</option>
                     {opciones.map(opcion => (
-                        <option key={opcion.CoinInfo.id} value={opcion.CoinInfo.Name}>{opcion.CoinInfo.FullName}</option>
+                        <option key={opcion.CoinInfo.Id} value={opcion.CoinInfo.Name}>{opcion.CoinInfo.FullName}</option>
                     ))}
                 </Select>
             </div>
