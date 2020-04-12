@@ -82,7 +82,7 @@ const Formulario = ({setMoneda ,setCriptomoneda}) => {
 
             <SelectMonedas/>
             <SelectCripto/>
-            <Boton typed="submit" value="Calcular">sdfasdf</Boton>
+            <Boton typed="submit" value="Calcular">Calcular</Boton>
         </form>
      );
 }
