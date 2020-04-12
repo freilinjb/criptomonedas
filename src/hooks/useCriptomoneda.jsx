@@ -1,6 +1,5 @@
 import React,{Fragment, useState} from 'react';
 import styled from '@emotion/styled';
-import cryptocompare from 'cryptocompare';
 
 const Label = styled.label`
     font-family:'Bebas Neue', cursive;
