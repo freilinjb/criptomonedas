@@ -51,7 +51,8 @@ function App() {
       const url = `https://min-api.cryptocompare.com/data/pricemultifull?fsyms=${criptomoneda}&tsyms=${moneda}`;
       const resultado = await Axios.get(url);
 
-      console.log(resultado);
+      //acceder a los valores de manera dinamica a los valores
+      console.log(resultado.data.DISPLAY[criptomoneda][moneda]);
     }
 
     cotizarCriptomoneda();
@@ -69,7 +70,7 @@ function App() {
         <Formulario setMoneda={setMoneda} setCriptomoneda={setCriptomoneda}/>
 
       </div>
-    </Contenedor>
+    </Contenedor> 
   );
 }
 
