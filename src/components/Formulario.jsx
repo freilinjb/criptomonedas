@@ -1,8 +1,8 @@
 import React,{ useEffect, useState } from 'react';
 import styled from '@emotion/styled';
-
+import Error from './Error';
 import useMoneda from '../hooks/useMoneda';
-import useCriptomoneda from '../hooks/useCriptomoneda';
+import useCriptomoneda from '../hooks/useCriptomoneda'; //custom hooks
 import Axios from 'axios';
 
 const Boton = styled.button`
@@ -26,7 +26,7 @@ const Boton = styled.button`
     }
 `;
 
-const Formulario = () => {
+const Formulario = ({setMoneda ,setCriptomoneda}) => {
 
     //state de listado de criptomonedas
     const [listaCripto, setListaCripto] = useState([]);
@@ -70,13 +70,15 @@ const Formulario = () => {
            console.log(`moneda: ${moneda} cripto: ${criptomoneda}`);
 
        //pasar los datos al componente principal
-       setError(true);
+       setError(false);
+       setMoneda(moneda);
+       setCriptomoneda(criptomoneda);
    }
    
    return ( 
         <form onSubmit={cotizarMoneda}>
 
-            { error ? "Hay un error" : null}
+            { error ? <Error mensaje="Todos los campos son obligatorios"/> : null}
 
             <SelectMonedas/>
             <SelectCripto/>
