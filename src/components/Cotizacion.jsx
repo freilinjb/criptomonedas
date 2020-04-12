@@ -33,13 +33,13 @@ const Cotizacion = ({resultado}) => {
     
 
     return ( 
-        <div>
+        <ResultadoDiv>
             <Precio>El presio es: <span>{resultado.PRICE}</span></Precio>
             <Info>Presio más alto del día: <span>{resultado.HIGHDAY}</span></Info>
             <Info>Precio más bajo del día: <span>{resultado.LOWDAY}</span></Info>
             <Info>Variación últimas 24 horas : <span>{resultado.CHANGEPCT24HOUR}</span></Info>
             <Info>Última Actualización: <span>{resultado.LASTUPDATE}</span></Info>
-        </div>
+        </ResultadoDiv>
      );
 }
 
