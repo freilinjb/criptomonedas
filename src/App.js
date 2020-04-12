@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import styled from '@emotion/styled';
 import imagen from './cryptomonedas.png';
 import Formulario from './components/Formulario';
@@ -41,7 +41,14 @@ function App() {
   const [moneda, setMoneda] = useState('');
   const [criptomoneda, setCriptomoneda] = useState('');
 
+  useEffect(() => {
+    //evitamos que se ejecuta la primera vez
+    if(moneda === '') return;
 
+    console.log('cotizando...');
+
+    //se ejecuta cuando esos valores cambien
+  },[moneda, criptomoneda]);
 
   return (
     <Contenedor>
